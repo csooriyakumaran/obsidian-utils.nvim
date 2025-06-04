@@ -16,9 +16,7 @@ Supplies helper functions for the [`obsidian.nvim`](https://github.com/epwalsh/o
         'nvim-telescope/telescope.nvim',
     },
     opts = {
-            -- optional overrides
-            -- template_dir = 'templates',
-            -- exclude_dirs = { '.git', '.obsidian'}
+            -- optional overrides (see below)
     }
     config = function(_, opts)
         require('obsidian-utils').setup(opts)
@@ -41,7 +39,19 @@ Supplies helper functions for the [`obsidian.nvim`](https://github.com/epwalsh/o
     template_dir = nil, 
 
     -- directories to exclude from the search when selecting note directory
-    exclude_dirs = {'.git', '.obsidian'}
+    exclude_dirs = {'.git', '.obsidian'},
+
+    -- method for opening new note after creation
+    open_method = 'floating', -- options [`floating`, `vsplit`, `hsplit`, `edit`]
+
+    -- window options to be used if open_method is `floating`
+    floating_opts = {
+        width = math.floor(vim.o.columns * 0.6),
+        height = math.floor(vim.o.lines * 0.8),
+        row = math.floor(vim.o.lines * 0.1),
+        col = math.floor(vim.o.columns * 0.2),
+        border = 'rounded',
+    },
 }
 ```
 
