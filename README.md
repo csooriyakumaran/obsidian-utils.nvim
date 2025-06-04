@@ -2,6 +2,8 @@
 
 Supplies helper functions for the [`obsidian.nvim`](https://github.com/epwalsh/obsidian.nvim) plugin. User configurations are largely imported from `obsidian.nvim`. 
 
+[!NOTE] This does not need to be a plugin, but I wanted to learn to author plugins for [`Neovim`](https://neovim.io/)
+
 ## Installation
 
 ##### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
