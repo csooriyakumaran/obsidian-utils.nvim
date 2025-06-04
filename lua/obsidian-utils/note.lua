@@ -50,6 +50,12 @@ local function open_note_path(path)
     vim.wo[win].relativenumber = true
 
     vim.cmd('edit ' .. tostring(path))
+
+    vim.keymap.set('n', 'q', function()
+      if vim.api.nvim_win_is_valid(win) then
+        vim.api.nvim_win_close(win, true)
+      end
+    end, { buffer = buf, nowait = true, silent = true })
   else
     vim.cmd('edit ' .. tostring(path))
   end
