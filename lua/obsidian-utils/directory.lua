@@ -118,7 +118,7 @@ function M.select(vault_path, callback)
             callback(new_dir)
           end)
         else
-          callback(vault_path / selection)
+          callback(selection)
         end
       end)
       return true

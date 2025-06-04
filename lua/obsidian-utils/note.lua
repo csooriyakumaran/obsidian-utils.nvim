@@ -51,6 +51,9 @@ local function open_note_path(path)
 
     vim.cmd('edit ' .. tostring(path))
 
+    local last_line = vim.api.nvim_buf_line_count(buf)
+    vim.api.nvim_win_set_cursor(win, { last_line, 0 })
+
     vim.keymap.set('n', 'q', function()
       if vim.api.nvim_win_is_valid(win) then
         vim.api.nvim_win_close(win, true)
